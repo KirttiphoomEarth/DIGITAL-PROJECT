@@ -1,0 +1,48 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : debouning_01.vf
+// /___/   /\     Timestamp : 12/14/2021 23:15:12
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/KIRTTIPHOOM/Desktop/labdigi/project_10/debouning_01.vf -w C:/Users/KIRTTIPHOOM/Desktop/Modul_FPGA/debouning_01.sch
+//Design Name: debouning_01
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module debouning_01(Button, 
+                    C, 
+                    O);
+
+    input Button;
+    input C;
+   output O;
+   
+   wire XLXN_32;
+   wire XLXN_34;
+   wire XLXN_35;
+   
+   INV  XLXI_16 (.I(XLXN_34), 
+                .O(XLXN_35));
+   AND2  XLXI_17 (.I0(XLXN_35), 
+                 .I1(XLXN_32), 
+                 .O(O));
+   FDC  XLXI_18 (.C(C), 
+                .CLR(), 
+                .D(Button), 
+                .Q(XLXN_32));
+   FDC  XLXI_19 (.C(C), 
+                .CLR(), 
+                .D(XLXN_32), 
+                .Q(XLXN_34));
+endmodule

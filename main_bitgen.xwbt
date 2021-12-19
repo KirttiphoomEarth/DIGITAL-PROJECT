@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\KIRTTIPHOOM\Desktop\labdigi\project_10\main.ncd
+OUTFILE=C:\Users\KIRTTIPHOOM\Desktop\labdigi\project_10\main.bit
+FAMILY=Spartan6
+PART=xc6slx9-3tqg144
+WORKINGDIR=C:\Users\KIRTTIPHOOM\Desktop\labdigi\project_10
+LICENSE=WebPack
+USER_INFO=__0_0_0

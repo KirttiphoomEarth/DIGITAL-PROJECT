@@ -1,0 +1,217 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : main.vf
+// /___/   /\     Timestamp : 12/14/2021 23:35:15
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/KIRTTIPHOOM/Desktop/labdigi/project_10/main.vf -w C:/Users/KIRTTIPHOOM/Desktop/labdigi/project_10/main.sch
+//Design Name: main
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module main(Ain, 
+            Bin, 
+            osc, 
+            regame, 
+            sw0, 
+            sw1, 
+            a, 
+            b, 
+            c, 
+            com0, 
+            com1, 
+            com2, 
+            com3, 
+            d, 
+            e, 
+            f, 
+            g, 
+            Gout, 
+            LED, 
+            Vout, 
+            VoutB);
+
+    input [8:0] Ain;
+    input [8:0] Bin;
+    input osc;
+    input regame;
+    input sw0;
+    input sw1;
+   output a;
+   output b;
+   output c;
+   output com0;
+   output com1;
+   output com2;
+   output com3;
+   output d;
+   output e;
+   output f;
+   output g;
+   output Gout;
+   output [8:0] LED;
+   output Vout;
+   output VoutB;
+   
+   wire XLXN_1;
+   wire [3:0] XLXN_2;
+   wire [3:0] XLXN_3;
+   wire [3:0] XLXN_11;
+   wire [3:0] XLXN_12;
+   wire XLXN_13;
+   wire XLXN_15;
+   wire [3:0] XLXN_16;
+   wire XLXN_17;
+   wire XLXN_18;
+   wire XLXN_19;
+   wire [3:0] XLXN_23;
+   wire [3:0] XLXN_24;
+   wire [3:0] XLXN_25;
+   wire XLXN_26;
+   wire [3:0] XLXN_28;
+   wire [8:0] XLXN_29;
+   wire [8:0] XLXN_30;
+   wire XLXN_53;
+   wire XLXN_54;
+   wire XLXN_73;
+   wire XLXN_74;
+   wire XLXN_75;
+   wire XLXN_76;
+   wire XLXN_77;
+   wire XLXN_78;
+   wire XLXN_79;
+   wire XLXN_80;
+   wire XLXN_82;
+   wire XLXN_83;
+   wire XLXN_88;
+   wire XLXN_89;
+   wire XLXN_90;
+   wire XLXN_91;
+   wire [8:0] LED_DUMMY;
+   wire Vout_DUMMY;
+   
+   assign LED[8:0] = LED_DUMMY[8:0];
+   assign Vout = Vout_DUMMY;
+   to_1_2_10_100_1000Hz  XLXI_1 (.clockIn(osc), 
+                                .to1hz(XLXN_17), 
+                                .to2hz(XLXN_18), 
+                                .to10hz(XLXN_19), 
+                                .to100hz(), 
+                                .to1000hz(XLXN_1), 
+                                .zero_5hz());
+   seldisplay7seg  XLXI_2 (.clkin(XLXN_1), 
+                          .d0(XLXN_16[3:0]), 
+                          .d1(XLXN_11[3:0]), 
+                          .d2(XLXN_3[3:0]), 
+                          .d3(XLXN_12[3:0]), 
+                          .com0(com0), 
+                          .com1(com1), 
+                          .com2(com2), 
+                          .com3(com3), 
+                          .digi(XLXN_2[3:0]));
+   BCD_TO_7segment  XLXI_3 (.data(XLXN_2[3:0]), 
+                           .a(a), 
+                           .b(b), 
+                           .c(c), 
+                           .d(d), 
+                           .e(e), 
+                           .f(f), 
+                           .g(g));
+   counter08_project  XLXI_4 (.claer(), 
+                             .clk(XLXN_17), 
+                             .dev8(), 
+                             .O(XLXN_23[3:0]));
+   counter08_project  XLXI_5 (.claer(), 
+                             .clk(XLXN_18), 
+                             .dev8(), 
+                             .O(XLXN_24[3:0]));
+   counter08_project  XLXI_6 (.claer(), 
+                             .clk(XLXN_19), 
+                             .dev8(), 
+                             .O(XLXN_25[3:0]));
+   counter010  XLXI_7 (.clear(), 
+                      .clk_in(XLXN_17), 
+                      .divide_11(XLXN_54), 
+                      .q());
+   buttom_sw  XLXI_8 (.I(XLXN_53), 
+                     .O(XLXN_26));
+   sele_mode_clock  XLXI_9 (.I1(XLXN_23[3:0]), 
+                           .I2(XLXN_24[3:0]), 
+                           .I3(XLXN_25[3:0]), 
+                           .sw0(sw0), 
+                           .sw1(sw1), 
+                           .O(XLXN_28[3:0]));
+   patten_01  XLXI_10 (.I(XLXN_28[3:0]), 
+                      .O(XLXN_29[8:0]));
+   patten_02  XLXI_11 (.I(XLXN_28[3:0]), 
+                      .O(XLXN_30[8:0]));
+   sele_patten  XLXI_14 (.Ai(XLXN_29[8:0]), 
+                        .Bi(XLXN_30[8:0]), 
+                        .s(XLXN_26), 
+                        .O(LED_DUMMY[8:0]));
+   joyplay  XLXI_33 (.Button(Ain[8:0]), 
+                    .LED(LED_DUMMY[8:0]), 
+                    .O(XLXN_88));
+   joyplay  XLXI_34 (.Button(Bin[8:0]), 
+                    .LED(LED_DUMMY[8:0]), 
+                    .O(XLXN_89));
+   INV  XLXI_47 (.I(XLXN_54), 
+                .O(XLXN_53));
+   VCC  XLXI_48 (.P(Vout_DUMMY));
+   GND  XLXI_49 (.G(Gout));
+   INV  XLXI_56 (.I(XLXN_73), 
+                .O(XLXN_74));
+   INV  XLXI_57 (.I(XLXN_15), 
+                .O(XLXN_76));
+   INV  XLXI_58 (.I(XLXN_78), 
+                .O(XLXN_79));
+   INV  XLXI_59 (.I(XLXN_13), 
+                .O(XLXN_82));
+   OR2  XLXI_60 (.I0(XLXN_82), 
+                .I1(regame), 
+                .O(XLXN_83));
+   OR2  XLXI_61 (.I0(XLXN_79), 
+                .I1(regame), 
+                .O(XLXN_80));
+   OR2  XLXI_62 (.I0(XLXN_76), 
+                .I1(regame), 
+                .O(XLXN_77));
+   OR2  XLXI_63 (.I0(XLXN_74), 
+                .I1(regame), 
+                .O(XLXN_75));
+   debouning_01  XLXI_64 (.Button(XLXN_88), 
+                         .C(XLXN_19), 
+                         .O(XLXN_90));
+   debouning_01  XLXI_65 (.Button(XLXN_89), 
+                         .C(XLXN_19), 
+                         .O(XLXN_91));
+   counter010  XLXI_66 (.clear(XLXN_83), 
+                       .clk_in(XLXN_90), 
+                       .divide_11(XLXN_13), 
+                       .q(XLXN_3[3:0]));
+   counter010  XLXI_67 (.clear(XLXN_80), 
+                       .clk_in(XLXN_13), 
+                       .divide_11(XLXN_78), 
+                       .q(XLXN_12[3:0]));
+   counter010  XLXI_68 (.clear(XLXN_77), 
+                       .clk_in(XLXN_91), 
+                       .divide_11(XLXN_15), 
+                       .q(XLXN_16[3:0]));
+   counter010  XLXI_69 (.clear(XLXN_75), 
+                       .clk_in(XLXN_15), 
+                       .divide_11(XLXN_73), 
+                       .q(XLXN_11[3:0]));
+   BUF  XLXI_70 (.I(Vout_DUMMY), 
+                .O(VoutB));
+endmodule

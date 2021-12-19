@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family spartan6 -refsym to_1_2_10_100_1000Hz C:/Users/KIRTTIPHOOM/Desktop/Modul_FPGA/to_1_2_10_100_1000Hz.sch C:/Users/KIRTTIPHOOM/Desktop/labdigi/project_10/to_1_2_10_100_1000Hz.sym 

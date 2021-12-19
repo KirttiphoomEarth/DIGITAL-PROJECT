@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family spartan6 -refsym BCD_TO_7segment C:/Users/KIRTTIPHOOM/Desktop/Modul_FPGA/BCD_TO_7segment.sch C:/Users/KIRTTIPHOOM/Desktop/labdigi/project_10/BCD_TO_7segment.sym 

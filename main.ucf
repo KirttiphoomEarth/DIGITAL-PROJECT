@@ -1,0 +1,50 @@
+
+
+NET "Ain[8]" LOC = P24;
+NET "Ain[7]" LOC = P22;
+NET "Ain[6]" LOC = P17;
+NET "Ain[5]" LOC = P15;
+NET "Ain[4]" LOC = P12;
+NET "Ain[3]" LOC = P10;
+NET "Ain[2]" LOC = P8;
+NET "Ain[1]" LOC = P6;
+NET "Ain[0]" LOC = P21;
+NET "Bin[8]" LOC = P1;
+NET "Bin[7]" LOC = P142;
+NET "Bin[6]" LOC = P140;
+NET "Bin[5]" LOC = P138;
+NET "Bin[4]" LOC = P134;
+NET "Bin[3]" LOC = P132;
+NET "Bin[2]" LOC = P127;
+NET "Bin[1]" LOC = P124;
+NET "Bin[0]" LOC = P131;
+NET "LED[8]" LOC = P121;
+NET "LED[7]" LOC = P120;
+NET "LED[6]" LOC = P119;
+NET "LED[5]" LOC = P118;
+NET "LED[4]" LOC = P117;
+NET "LED[3]" LOC = P116;
+NET "LED[2]" LOC = P115;
+NET "LED[1]" LOC = P114;
+NET "regame" LOC = P47;
+NET "osc" LOC = P123;
+NET "LED[0]" LOC = P112;
+NET "sw1" LOC = P62;
+NET "sw0" LOC = P66;
+NET "Vout" LOC = P23;
+NET "a" LOC = P41;
+NET "b" LOC = P40;
+NET "c" LOC = P35;
+NET "com0" LOC = P44;
+NET "com1" LOC = P43;
+NET "com2" LOC = P33;
+NET "com3" LOC = P30;
+NET "d" LOC = P34;
+NET "e" LOC = P32;
+NET "f" LOC = P29;
+NET "g" LOC = P27;
+NET "Gout" LOC = P26;
+
+# PlanAhead Generated physical constraints 
+
+NET "VoutB" LOC = P126;

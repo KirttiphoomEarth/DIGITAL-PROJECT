@@ -1,0 +1,72 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : buttom_sw.vf
+// /___/   /\     Timestamp : 12/14/2021 23:13:08
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/KIRTTIPHOOM/Desktop/labdigi/project_10/buttom_sw.vf -w C:/Users/KIRTTIPHOOM/Desktop/Modul_FPGA/buttom_sw.sch
+//Design Name: buttom_sw
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module buttom_sw(I, 
+                 O);
+
+    input I;
+   output O;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_5;
+   wire XLXN_10;
+   wire XLXN_11;
+   wire XLXN_14;
+   wire XLXN_15;
+   wire XLXN_19;
+   wire XLXN_20;
+   wire XLXN_23;
+   wire O_DUMMY;
+   
+   assign O = O_DUMMY;
+   AND2  XLXI_1 (.I0(XLXN_5), 
+                .I1(XLXN_23), 
+                .O(XLXN_11));
+   AND2  XLXI_2 (.I0(XLXN_1), 
+                .I1(XLXN_5), 
+                .O(XLXN_10));
+   NOR2  XLXI_3 (.I0(XLXN_15), 
+                .I1(XLXN_11), 
+                .O(XLXN_14));
+   NOR2  XLXI_4 (.I0(XLXN_10), 
+                .I1(XLXN_14), 
+                .O(XLXN_15));
+   AND2  XLXI_5 (.I0(I), 
+                .I1(XLXN_15), 
+                .O(XLXN_20));
+   AND2  XLXI_6 (.I0(XLXN_2), 
+                .I1(I), 
+                .O(XLXN_19));
+   NOR2  XLXI_7 (.I0(O_DUMMY), 
+                .I1(XLXN_20), 
+                .O(XLXN_23));
+   NOR2  XLXI_8 (.I0(XLXN_19), 
+                .I1(XLXN_23), 
+                .O(O_DUMMY));
+   INV  XLXI_13 (.I(I), 
+                .O(XLXN_5));
+   INV  XLXI_14 (.I(XLXN_23), 
+                .O(XLXN_1));
+   INV  XLXI_15 (.I(XLXN_15), 
+                .O(XLXN_2));
+endmodule

@@ -1,0 +1,101 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : sele_patten.vf
+// /___/   /\     Timestamp : 12/14/2021 23:13:07
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/KIRTTIPHOOM/Desktop/labdigi/project_10/sele_patten.vf -w C:/Users/KIRTTIPHOOM/Desktop/Modul_FPGA/sele_patten.sch
+//Design Name: sele_patten
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module M2_1_HXILINX_sele_patten (O, D0, D1, S0);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  S0;
+
+   reg O;
+
+   always @ ( D0 or D1 or S0)
+   begin
+      case(S0)
+      1'b0 : O <= D0;
+      1'b1 : O <= D1;
+      endcase
+   end
+    
+endmodule
+`timescale 1ns / 1ps
+
+module sele_patten(Ai, 
+                   Bi, 
+                   s, 
+                   O);
+
+    input [8:0] Ai;
+    input [8:0] Bi;
+    input s;
+   output [8:0] O;
+   
+   
+   (* HU_SET = "XLXI_1_32" *) 
+   M2_1_HXILINX_sele_patten  XLXI_1 (.D0(Ai[0]), 
+                                    .D1(Bi[0]), 
+                                    .S0(s), 
+                                    .O(O[0]));
+   (* HU_SET = "XLXI_2_33" *) 
+   M2_1_HXILINX_sele_patten  XLXI_2 (.D0(Ai[1]), 
+                                    .D1(Bi[1]), 
+                                    .S0(s), 
+                                    .O(O[1]));
+   (* HU_SET = "XLXI_3_34" *) 
+   M2_1_HXILINX_sele_patten  XLXI_3 (.D0(Ai[2]), 
+                                    .D1(Bi[2]), 
+                                    .S0(s), 
+                                    .O(O[2]));
+   (* HU_SET = "XLXI_4_35" *) 
+   M2_1_HXILINX_sele_patten  XLXI_4 (.D0(Ai[3]), 
+                                    .D1(Bi[3]), 
+                                    .S0(s), 
+                                    .O(O[3]));
+   (* HU_SET = "XLXI_5_39" *) 
+   M2_1_HXILINX_sele_patten  XLXI_5 (.D0(Ai[4]), 
+                                    .D1(Bi[4]), 
+                                    .S0(s), 
+                                    .O(O[4]));
+   (* HU_SET = "XLXI_6_36" *) 
+   M2_1_HXILINX_sele_patten  XLXI_6 (.D0(Ai[5]), 
+                                    .D1(Bi[5]), 
+                                    .S0(s), 
+                                    .O(O[5]));
+   (* HU_SET = "XLXI_7_37" *) 
+   M2_1_HXILINX_sele_patten  XLXI_7 (.D0(Ai[6]), 
+                                    .D1(Bi[6]), 
+                                    .S0(s), 
+                                    .O(O[6]));
+   (* HU_SET = "XLXI_8_38" *) 
+   M2_1_HXILINX_sele_patten  XLXI_8 (.D0(Ai[7]), 
+                                    .D1(Bi[7]), 
+                                    .S0(s), 
+                                    .O(O[7]));
+   (* HU_SET = "XLXI_21_40" *) 
+   M2_1_HXILINX_sele_patten  XLXI_21 (.D0(Ai[8]), 
+                                     .D1(Bi[8]), 
+                                     .S0(s), 
+                                     .O(O[8]));
+endmodule

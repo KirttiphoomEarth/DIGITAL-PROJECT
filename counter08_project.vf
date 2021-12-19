@@ -1,0 +1,139 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : counter08_project.vf
+// /___/   /\     Timestamp : 12/14/2021 23:13:07
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/KIRTTIPHOOM/Desktop/labdigi/project_10/counter08_project.vf -w C:/Users/KIRTTIPHOOM/Desktop/Modul_FPGA/counter08_project.sch
+//Design Name: counter08_project
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FJKC_HXILINX_counter08_project(Q, C, CLR, J, K);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              J;
+   input              K;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+
+
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else
+        begin
+           if(!J)
+           begin
+              if(K)
+              Q <= 1'b0;
+           end
+           else
+           begin
+              if(!K)
+              Q <= 1'b1;
+              else 
+              Q <= !Q;
+           end
+        end
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module counter08_project(claer, 
+                         clk, 
+                         dev8, 
+                         O);
+
+    input claer;
+    input clk;
+   output dev8;
+   output [3:0] O;
+   
+   wire XLXN_6;
+   wire XLXN_7;
+   wire XLXN_10;
+   wire XLXN_11;
+   wire XLXN_15;
+   wire XLXN_18;
+   wire XLXN_22;
+   wire XLXN_24;
+   wire XLXN_25;
+   wire XLXN_57;
+   wire XLXN_59;
+   wire [3:0] O_DUMMY;
+   
+   assign O[3:0] = O_DUMMY[3:0];
+   (* HU_SET = "XLXI_2_24" *) 
+   FJKC_HXILINX_counter08_project  XLXI_2 (.C(clk), 
+                                          .CLR(claer), 
+                                          .J(XLXN_11), 
+                                          .K(XLXN_25), 
+                                          .Q(O_DUMMY[0]));
+   (* HU_SET = "XLXI_3_25" *) 
+   FJKC_HXILINX_counter08_project  XLXI_3 (.C(clk), 
+                                          .CLR(claer), 
+                                          .J(XLXN_18), 
+                                          .K(XLXN_18), 
+                                          .Q(O_DUMMY[1]));
+   (* HU_SET = "XLXI_4_26" *) 
+   FJKC_HXILINX_counter08_project  XLXI_4 (.C(clk), 
+                                          .CLR(claer), 
+                                          .J(XLXN_24), 
+                                          .K(XLXN_24), 
+                                          .Q(O_DUMMY[2]));
+   (* HU_SET = "XLXI_5_27" *) 
+   FJKC_HXILINX_counter08_project  XLXI_5 (.C(clk), 
+                                          .CLR(claer), 
+                                          .J(XLXN_22), 
+                                          .K(XLXN_25), 
+                                          .Q(O_DUMMY[3]));
+   AND2  XLXI_6 (.I0(XLXN_10), 
+                .I1(O_DUMMY[1]), 
+                .O(XLXN_7));
+   AND2  XLXI_7 (.I0(XLXN_10), 
+                .I1(XLXN_15), 
+                .O(XLXN_6));
+   AND2  XLXI_8 (.I0(XLXN_10), 
+                .I1(O_DUMMY[0]), 
+                .O(XLXN_18));
+   AND2  XLXI_10 (.I0(O_DUMMY[1]), 
+                 .I1(O_DUMMY[0]), 
+                 .O(XLXN_24));
+   OR2  XLXI_11 (.I0(XLXN_6), 
+                .I1(XLXN_7), 
+                .O(XLXN_11));
+   INV  XLXI_12 (.I(O_DUMMY[3]), 
+                .O(XLXN_10));
+   AND3  XLXI_13 (.I0(O_DUMMY[1]), 
+                 .I1(O_DUMMY[2]), 
+                 .I2(O_DUMMY[0]), 
+                 .O(XLXN_22));
+   INV  XLXI_14 (.I(O_DUMMY[1]), 
+                .O(XLXN_15));
+   VCC  XLXI_15 (.P(XLXN_25));
+   AND2  XLXI_16 (.I0(XLXN_57), 
+                 .I1(O_DUMMY[3]), 
+                 .O(XLXN_59));
+   INV  XLXI_31 (.I(O_DUMMY[2]), 
+                .O(XLXN_57));
+   INV  XLXI_32 (.I(XLXN_59), 
+                .O(dev8));
+endmodule

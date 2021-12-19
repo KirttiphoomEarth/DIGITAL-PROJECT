@@ -1,0 +1,3 @@
+MODULE seldisplay7seg
+	SUBMODULE counter04
+		INSTANCE XLXI_32
